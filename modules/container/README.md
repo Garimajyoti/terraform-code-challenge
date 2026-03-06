@@ -180,3 +180,6 @@ ERROR: Missing required fields (name, region, instances).
 - **Idempotency:** Running the script multiple times with the same input produces the same output and does not corrupt files.  
 - **Non-existent or invalid templates:** The script exits with meaningful errors if the template file is missing or contains invalid JSON.  
 - **Placeholder flexibility:** Only `$ENV` and `$REGION` are replaced; other fields remain unchanged.
+
+## Author
+Garima Jyoti
