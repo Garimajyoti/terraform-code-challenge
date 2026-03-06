@@ -20,7 +20,7 @@ It includes:
 │       └── variables.tf
 │       └── outputs.tf
 ├── main.tf  
-├── networks.tf                  # Parent module orchestration
+├── networks.tf              # Parent module orchestration
 ├── variables.tf             # Input variable declarations
 ├── docker.tfvars            # Configuration values (networks, container specs)
 └── README.md                # Documentation
