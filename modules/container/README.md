@@ -42,6 +42,7 @@ Run the script as:
 
 ```bash
 ./generate_json.sh tiger westus2 a.json
+```
 
 ## 4. Validation Rules
 
@@ -88,3 +89,51 @@ ERROR: Missing required fields (name, region, instances).
 ERROR: instances must be greater than 0.
 ERROR: Invalid JSON in template file.
 ERROR: File does not exist: b.json
+```
+
+## 6. Examples
+
+### Example 1: Valid Template (`a.json`)
+
+**Template (`a.json`):**
+
+```json
+{
+  "type": "frontend",
+  "name": "$ENV",
+  "region": "$REGION",
+  "instances": 2
+}
+```
+
+**Command:**
+
+```bash
+./generate_json.sh tiger westus2 a.json
+```
+
+**Output (`tiger_output.json`):**
+
+```json
+{
+  "type": "frontend",
+  "name": "tiger",
+  "region": "westus2",
+  "instances": 2
+}
+```
+
+### Example 2: Invalid Template (`c.json` with instances = 0)
+
+**Template (`c.json`):**
+
+**Command:**
+
+```bash
+./generate_json.sh tiger westus2 c.json
+```
+
+**Output:**
+ERROR: instances must be greater than 0.
+
+**Exit code:** 1
