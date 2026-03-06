@@ -137,3 +137,20 @@ ERROR: File does not exist: b.json
 ERROR: instances must be greater than 0.
 
 **Exit code:** 1
+
+### Example 3. Invalid Field Name (b.json, names instead of name)
+
+**Template (`b.json`):**
+
+**Command:**
+
+```bash
+./generate_json.sh tiger westus2 b.json
+```
+
+**Output:**
+ERROR: Missing required fields (name, region, instances).
+
+**Exit code:** 1  
+
+> **Note:** Hardcoded fields in the JSON template are not overridden unless they contain placeholders (`$ENV` or `$REGION`).
