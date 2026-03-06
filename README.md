@@ -53,9 +53,9 @@ It includes:
 
 ```bash
 terraform init
-
-**Apply the configuration:**
 ```
+**Apply the configuration:**
+
 
 ```bash
 terraform apply -var-file="docker.tfvars"
@@ -68,8 +68,13 @@ After applying the Terraform configuration, you can check the status of containe
 ```bash
 docker ps
 ```
+```bash
 docker network ls
+```
+
+```bash
 docker volume ls
+```
 
 ## Future Modifications
 
