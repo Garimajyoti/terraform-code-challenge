@@ -51,19 +51,23 @@ It includes:
 
 **Initialize Terraform:**
 
-
+```bash
 terraform init
 
 **Apply the configuration:**
+```
 
-
+```bash
 terraform apply -var-file="docker.tfvars"
+```
 
 ## Verify Containers, Networks, and Volumes
 
 After applying the Terraform configuration, you can check the status of containers, networks, and volumes using:
 
+```bash
 docker ps
+```
 docker network ls
 docker volume ls
 
