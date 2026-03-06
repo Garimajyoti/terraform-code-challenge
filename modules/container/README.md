@@ -154,3 +154,27 @@ ERROR: Missing required fields (name, region, instances).
 **Exit code:** 1  
 
 > **Note:** Hardcoded fields in the JSON template are not overridden unless they contain placeholders (`$ENV` or `$REGION`).
+
+
+### CI/CD Considerations
+
+- **Non-interactive execution**: The script runs entirely from command-line arguments, making it suitable for automated pipelines.  
+- **Proper exit codes**:  
+  - `0` → success  
+  - `1` → failure (invalid JSON, missing fields, invalid instances, missing arguments)  
+  Pipelines can detect success or failure automatically.  
+- **Input and output validation**: Ensures template JSON is valid before substitution and final JSON is valid before writing output.  
+- **Deterministic output**: Same inputs always produce the same output file, ensuring repeatable CI/CD runs.  
+- **Meaningful error messages**: Helps debugging when a pipeline fails.  
+- **Dependency checks**: Confirms required utilities (`jq` and `envsubst`) are available before execution.  
+- **Idempotent**: Running the script multiple times with the same inputs will not break the pipeline or produce inconsistent results.
+
+
+### Notes / Edge Cases
+
+- **Hardcoded region values:** If the template JSON already contains a region (not `$REGION`), the script does **not override** it. Only placeholders are replaced.  
+- **Field names must match exactly:** The JSON must have `name`, `region`, and `instances` fields. Using `names` instead of `name` will fail validation.  
+- **Instances validation:** `instances` must be a number greater than 0. Zero or negative values cause the script to exit with an error.  
+- **Idempotency:** Running the script multiple times with the same input produces the same output and does not corrupt files.  
+- **Non-existent or invalid templates:** The script exits with meaningful errors if the template file is missing or contains invalid JSON.  
+- **Placeholder flexibility:** Only `$ENV` and `$REGION` are replaced; other fields remain unchanged.
