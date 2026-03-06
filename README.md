@@ -95,3 +95,8 @@ docker volume ls
 ## References
 
 - [Terraform Docker Get Started Tutorial](https://developer.hashicorp.com/terraform/tutorials/docker-get-started/docker-build)
+
+
+---
+## Author
+Garima Jyoti

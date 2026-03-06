@@ -181,5 +181,6 @@ ERROR: Missing required fields (name, region, instances).
 - **Non-existent or invalid templates:** The script exits with meaningful errors if the template file is missing or contains invalid JSON.  
 - **Placeholder flexibility:** Only `$ENV` and `$REGION` are replaced; other fields remain unchanged.
 
+---
 ## Author
 Garima Jyoti
