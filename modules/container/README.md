@@ -155,6 +155,7 @@ ERROR: Missing required fields (name, region, instances).
 
 > **Note:** Hardcoded fields in the JSON template are not overridden unless they contain placeholders (`$ENV` or `$REGION`).
 
+---
 
 ### CI/CD Considerations
 
@@ -169,6 +170,7 @@ ERROR: Missing required fields (name, region, instances).
 - **Dependency checks**: Confirms required utilities (`jq` and `envsubst`) are available before execution.  
 - **Idempotent**: Running the script multiple times with the same inputs will not break the pipeline or produce inconsistent results.
 
+---
 
 ### Notes / Edge Cases
 
