@@ -50,13 +50,16 @@ It includes:
 ## How to Deploy
 
 **Initialize Terraform:**
-
 ```bash
 terraform init
 ```
+
+**Plan the deployment:**
+```bash
+terraform plan -var-file="docker.tfvars"
+```
+
 **Apply the configuration:**
-
-
 ```bash
 terraform apply -var-file="docker.tfvars"
 ```
