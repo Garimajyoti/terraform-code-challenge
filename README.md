@@ -12,7 +12,7 @@ It includes:
 ---
 
 ## Project Structure
-
+```bash
 ├── modules/
 │   └── container/           # Child module for container creation
 │       ├── main.tf
@@ -22,7 +22,7 @@ It includes:
 ├── variables.tf             # Input variable declarations
 ├── docker.tfvars            # Configuration values (networks, container specs)
 └── README.md                # Documentation
-
+```
 
 - **Child module:** Handles creating individual Docker containers and volumes.  
 - **Parent module:** Creates networks and calls child module for web and backend containers.  
