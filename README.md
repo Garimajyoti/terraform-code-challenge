@@ -12,6 +12,8 @@ It includes:
 ---
 
 ## Project Structure
+
+```bash
 .
 ├── modules/
 │   └── container/           # Child module for container creation
@@ -40,14 +42,25 @@ It includes:
 
 ---
 
+```markdown
+## Prerequisites
+
+- Docker installed and running
+- Terraform v1.5+ installed
+- Access to a terminal/command line
+
+## Prerequisites
+
+- Docker installed and running
+- Terraform v1.5+ installed
+- Access to a terminal/command line
+
 ## How to Deploy
 
 **Initialize Terraform:**
 
 ```bash
 terraform init
-
-## How to Deploy
 
 **Apply the configuration:**
 
@@ -62,3 +75,23 @@ After applying the Terraform configuration, you can check the status of containe
 docker ps
 docker network ls
 docker volume ls
+
+## Future Modifications
+
+- **Add containers:** Update `web_servers` or `backend_servers` lists in `docker.tfvars`.
+- **Change images/tags:** Update `image_name` or `image_tag` in `.tfvars`.
+- **Change DNS:** Update `dns_servers` for web containers.
+- **Modify networks:** Update `internal_network_names` or `external_network_name`.
+- **Volume sizes:** Can be added as a variable if required in the future.
+
+## Notes
+
+- Designed for **easy readability** and **maintainability**.
+- Leverages `for_each` and `locals` for **dynamic container creation**.
+- DNS configuration is **container-specific**, ensuring different web servers can have **distinct settings**.
+- Each container has its own **persistent volume** to safeguard data.
+- Supports both **internal and external Docker networks** for flexible connectivity.
+
+## References
+
+- [Terraform Docker Get Started Tutorial](https://developer.hashicorp.com/terraform/tutorials/docker-get-started/docker-build)
