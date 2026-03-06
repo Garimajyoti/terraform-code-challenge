@@ -13,8 +13,6 @@ It includes:
 
 ## Project Structure
 
-```bash
-.
 ├── modules/
 │   └── container/           # Child module for container creation
 │       ├── main.tf
