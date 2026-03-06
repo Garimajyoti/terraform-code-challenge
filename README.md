@@ -42,18 +42,12 @@ It includes:
 
 ---
 
-```markdown
 ## Prerequisites
 
-- Docker installed and running
-- Terraform v1.5+ installed
-- Access to a terminal/command line
+- Docker installed and running  
+- Terraform v1.5+ installed  
+- Access to a terminal/command line  
 
-## Prerequisites
-
-- Docker installed and running
-- Terraform v1.5+ installed
-- Access to a terminal/command line
 
 ## How to Deploy
 
