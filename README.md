@@ -67,12 +67,7 @@ After applying the Terraform configuration, you can check the status of containe
 
 ```bash
 docker ps
-```
-```bash
 docker network ls
-```
-
-```bash
 docker volume ls
 ```
 
