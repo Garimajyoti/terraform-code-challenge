@@ -1,4 +1,4 @@
-# Generate JSON Script
+# Bash Script
 
 ## 1. Overview / Purpose
 This bash script generates a valid JSON file from a template by replacing placeholders `$ENV` and `$REGION` with user-provided values.  
